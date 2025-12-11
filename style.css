@@ -1,0 +1,331 @@
+:root {
+    --color-dark: #1a1a2e; /* 墨黑/深灰 */
+    --color-primary: #007bff; /* 科技蓝 */
+    --color-accent: #ff9900; /* 警示橙/黄 */
+    --color-text: #e0e0e0; /* 浅灰文字 */
+    --color-legendary: #ffc400; /* 传奇金色 */
+    --color-elite: #800080; /* 精英紫色 */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: var(--color-dark);
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+header {
+    background-color: #161625;
+    padding: 15px 0;
+    border-bottom: 2px solid var(--color-primary);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--color-primary);
+    letter-spacing: 2px;
+}
+
+nav a {
+    color: var(--color-text);
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 16px;
+    padding: 5px 0;
+    transition: color 0.3s;
+}
+
+nav a:hover, nav a.active {
+    color: var(--color-accent);
+    border-bottom: 2px solid var(--color-accent);
+}
+
+.user-area {
+    display: flex;
+    align-items: center;
+}
+
+.wallet-info {
+    margin-right: 15px;
+    padding: 5px 10px;
+    border: 1px solid var(--color-primary);
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.btn-connect {
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-connect:hover {
+    background-color: #0056b3;
+}
+
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+/* 英雄区和计算器预览 */
+.hero-section {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('placeholder-bg.jpg'); /* 假设背景图 */
+    background-size: cover;
+    padding: 60px;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 40px;
+    border: 1px solid var(--color-dark);
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.2);
+}
+
+.hero-section h1 {
+    font-size: 36px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.calculator-preview {
+    background-color: #2a2a44;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 40px;
+    border-left: 5px solid var(--color-accent); /* 强调特殊功能 */
+}
+
+.calculator-preview h2 {
+    color: var(--color-accent);
+    margin-bottom: 15px;
+}
+
+.calculator-widget {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.value-display {
+    font-size: 16px;
+}
+
+.value-number {
+    font-size: 24px;
+    color: var(--color-legendary);
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.btn-calculate {
+    background-color: var(--color-accent);
+    color: var(--color-dark);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* 过滤器样式 */
+.market-filters {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+    background-color: #2a2a44;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.market-filters input, .market-filters select {
+    padding: 10px;
+    border: 1px solid #444;
+    background-color: #333;
+    color: var(--color-text);
+    border-radius: 4px;
+}
+
+.btn-search {
+    background-color: #0099ff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* 物品列表和卡片样式 */
+.listing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.item-card {
+    background-color: #2a2a44;
+    padding: 20px;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    border: 1px solid #333;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.item-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.3);
+}
+
+.item-card.legendary {
+    border: 2px solid var(--color-legendary);
+}
+
+.item-card.elite {
+    border: 2px solid var(--color-elite);
+}
+
+.rarity-tag {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.legendary .rarity-tag { color: var(--color-legendary); }
+.elite .rarity-tag { color: var(--color-elite); }
+
+.item-card img {
+    width: 100%;
+    max-height: 150px;
+    object-fit: contain;
+    margin: 10px 0;
+}
+
+.item-card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.reputation-score {
+    color: var(--color-legendary);
+}
+
+.price-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.price-tag {
+    font-size: 22px;
+    font-weight: bold;
+    color: #4CAF50; /* 绿色表示价格 */
+}
+
+.btn-buy {
+    background-color: var(--color-accent);
+    color: var(--color-dark);
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #161625;
+    margin-top: 40px;
+    border-top: 2px solid var(--color-primary);
+    font-size: 14px;
+}
+
+footer a {
+    color: var(--color-primary);
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+/* ==========================================================
+   2. 媒体查询 (响应式设计优化)
+   ========================================================== */
+
+@media (max-width: 768px) {
+    /* 缩小主内容区域，防止左右溢出 */
+    .nav-container, main {
+        padding: 0 15px;
+    }
+
+    /* 顶部导航栏布局调整 */
+    header {
+        padding: 10px 0;
+    }
+
+    .nav-container {
+        flex-wrap: wrap; /* 允许元素换行 */
+        gap: 10px;
+    }
+
+    .logo {
+        font-size: 24px;
+        flex-basis: 100%; /* 标志独占一行 */
+        text-align: center;
+        margin-bottom: 5px;
+    }
+
+    nav {
+        order: 3; /* 导航栏放到第三位 */
+        flex-basis: 100%;
+        text-align: center;
+    }
+
+    .user-area {
+        order: 2; /* 用户区放到第二位 */
+    }
+
+    /* 战利品计算器布局调整 */
+    .calculator-widget {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    /* 市场过滤器调整 */
+    .market-filters {
+        flex-direction: column;
+    }
+
+    .market-filters input, .market-filters select, .btn-search {
+        width: 100%; /* 过滤器项占据全部宽度 */
+    }
+
+    /* 物品卡片网格调整 */
+    .listing-grid {
+        grid-template-columns: 1fr; /* 在手机上只显示单列卡片 */
+    }
+}

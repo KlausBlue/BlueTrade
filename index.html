@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>布鲁饰品交易平台 - BlueTrade</title>
+    <link rel="stylesheet" href="style.css">
+    </head>
+<body>
+    <header>
+        <div class="nav-container">
+            <div class="logo">BlueTrade</div>
+            <nav>
+                <a href="#" class="active">市场</a>
+                <a href="#">我的挂单</a>
+                <a href="#">交易记录</a>
+                <a href="#">工具 (计算器)</a>
+            </nav>
+            <div class="user-area">
+                <div class="wallet-info">
+                    <span>余额: $450.75</span>
+                </div>
+                <button class="btn-connect">Steam 连接</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="market-page">
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>欢迎来到布鲁饰品交易平台</h1>
+                <p>探索《PUBG: Black Budget》最稀有、最高价值的战利品。</p>
+            </div>
+        </section>
+
+        <section class="calculator-preview">
+            <h2>💎 战利品价值计算器</h2>
+            <div class="calculator-widget">
+                <p>快速估算您背包中物品的实时市场价值。</p>
+                <div class="value-display">
+                    总估值 (7D 均价): <span class="value-number">$1,234.50</span>
+                </div>
+                <button class="btn-calculate">导入清单并估算</button>
+            </div>
+        </section>
+
+        <section class="market-filters">
+            <input type="text" placeholder="搜索武器、护甲或蓝图...">
+            <select>
+                <option>稀有度: 全部</option>
+                <option class="rarity-legendary">传奇 (红/金)</option>
+                <option class="rarity-elite">精英</option>
+            </select>
+            <input type="number" placeholder="最低价格">
+            <input type="number" placeholder="最高价格">
+            <button class="btn-search">搜索</button>
+        </section>
+
+        <section class="item-listings">
+            <h2>热门挂单 (Legendary & Elite)</h2>
+            <div class="listing-grid">
+                <div class="item-card legendary">
+                    <div class="rarity-tag">传奇</div>
+                    <img src="placeholder-gun.png" alt="Legendary Weapon">
+                    <h3>【天启】模块化步枪</h3>
+                    <p>卖家: EliteTrader <span class="reputation-score">⭐4.9</span></p>
+                    <div class="price-info">
+                        <span class="price-tag">$450.00</span>
+                        <button class="btn-buy">立即购买</button>
+                    </div>
+                </div>
+
+                <div class="item-card elite">
+                    <div class="rarity-tag">精英</div>
+                    <img src="placeholder-armor.png" alt="Elite Armor">
+                    <h3>T6 动力外骨骼护甲</h3>
+                    <p>卖家: BudgetRunner <span class="reputation-score">⭐4.5</span></p>
+                    <div class="price-info">
+                        <span class="price-tag">$180.50</span>
+                        <button class="btn-buy">立即购买</button>
+                    </div>
+                </div>
+
+                </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 BlueTrade - 托管交易保障</p>
+        <p><a href="#">服务条款</a> | <a href="#">隐私政策</a> | <a href="#">联系我们</a></p>
+    </footer>
+    
+    <script src="script.js"></script>
+
+</body>
+</html>
